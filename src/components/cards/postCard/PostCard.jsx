@@ -1,14 +1,26 @@
 /* eslint-disable react/no-unknown-property */
-const PostCard = ({profile, name, email, numberOfMembers, image, title, description}) => {
+const PostCard = ({
+  profile,
+  name,
+  email,
+  numberOfMembers,
+  image,
+  title,
+  description,
+}) => {
+  function getInitials(str) {
+    return str
+      .split(" ") // Split the string by spaces
+      .map((word) => word.charAt(0)) // Get the first letter of each word
+      .join(""); // Join the letters into a single string
+  }
   return (
     <div className="w-full mb-2 shadow-sm bg-white rounded-lg px-4 py-4">
       <div class="flex items-center">
         <div class="shrink-0 bg-auto">
-          <img
-            class="w-8 h-8 rounded-full"
-            src={profile}
-            alt="Neil image"
-          />
+          <div className="w-10 h-10 font-extrabold text-2xl justify-center items-center text-center text-white rounded-full bg-blue-400">
+            {getInitials(profile)}
+          </div>
         </div>
         <div class="flex-1 min-w-0 ms-4">
           <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
@@ -26,9 +38,15 @@ const PostCard = ({profile, name, email, numberOfMembers, image, title, descript
         <a href="#">
           <img
             className="rounded-t-lg h-32 w-full object-cover "
-            src="https://cdn.pixabay.com/photo/2024/11/03/17/49/mountain-9172053_640.jpg"
+            src={image}
             alt=""
           />
+          {console.log("activity image: ", image)}
+          {/* <img
+            className="rounded-t-lg h-32 w-full object-cover "
+            src="https://cdn.pixabay.com/photo/2024/11/03/17/49/mountain-9172053_640.jpg"
+            alt=""
+          /> */}
         </a>
         <div class="p-5">
           <a href="#">

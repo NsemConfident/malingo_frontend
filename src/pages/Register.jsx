@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -21,6 +22,8 @@ const Register = () => {
     });
     console.log("data", id, value, type, checked);
   };
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -59,7 +62,7 @@ const Register = () => {
       console.log("all the data", data);
 
       setSuccess("Registration successful!");
-
+      navigate("/login");
       setFormData({
         name: "",
         email: "",

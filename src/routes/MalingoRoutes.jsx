@@ -5,6 +5,7 @@ import Register from "../pages/Register";
 import PostActivityForm from "../pages/PostActivityForm";
 import CreateActivity from "../pages/CreateActivity";
 import LoginForm from "../pages/LoginForm";
+import Example from "../components/sections/example/example";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/create-activity",
     element: <CreateActivity/>
+  },
+  {
+    path: "/example",
+    element: <Example />
   },
 ]);
 const MalingoRoutes = () => {

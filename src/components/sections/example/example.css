@@ -1,0 +1,9 @@
+
+
+.example-container, p {
+    padding-top: 20px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

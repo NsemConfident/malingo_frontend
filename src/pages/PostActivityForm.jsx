@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PostActivityForm = () => {
   const [formData, setFormData] = useState({
@@ -42,7 +43,7 @@ const PostActivityForm = () => {
       });
     }
   };
-
+  const navigate = useNavigate();
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -169,6 +170,7 @@ const PostActivityForm = () => {
 
       setSuccess("Activity created successfully!");
       // Reset form after successful submission
+      navigate("/");
       setFormData({
         title: "",
         description: "",
